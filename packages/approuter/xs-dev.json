@@ -1,0 +1,18 @@
+{
+  "welcomeFile": "index.html",
+  "authenticationMethod": "route",
+  "routes": [
+    {
+      "dependency": "@capire/bookshop",
+      "authenticationType": "none"
+    },
+    {
+      "dependency": "bookshop-ui5",
+      "authenticationType": "none"
+    },
+    {
+      "dependency": "bookshop-ui5-ts",
+      "authenticationType": "none"
+    }
+  ]
+}

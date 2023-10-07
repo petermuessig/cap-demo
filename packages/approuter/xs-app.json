@@ -1,0 +1,52 @@
+{
+  "welcomeFile": "index.html",
+  "authenticationMethod": "route",
+  "routes": [
+    {
+      "source": "^/resources/(.*)$",
+      "target": "/resources/$1",
+      "authenticationType": "none",
+      "destination": "ui5"
+    },
+    {
+      "source": "^/test-resources/(.*)$",
+      "target": "/test-resources/$1",
+      "authenticationType": "none",
+      "destination": "ui5"
+    },
+    {
+      "source": "^/form/(.*)$",
+      "target": "$1",
+      "authenticationType": "xsuaa",
+      "localDir": "./ui-form"
+    },
+    {
+      "source": "^/admin/(.*)$",
+      "target": "$1",
+      "authenticationType": "xsuaa",
+      "localDir": "./ui-admin"
+    },
+    {
+      "source": "^/sap.gps.ui.viewer/(.*)$",
+      "target": "$1",
+      "authenticationType": "xsuaa",
+      "localDir": "./ui-viewer"
+    },
+    {
+      "source": "^/(event-registration/.*)$",
+      "target": "$1",
+      "destination": "server"
+    },
+    {
+      "destination": "northwind",
+      "authenticationType": "none",
+      "source": "/northwind(.*)"
+    },
+    {
+      "source": "^/(.*)$",
+      "target": "$1",
+      "authenticationType": "xsuaa",
+      "localDir": "./sandbox"
+    }
+  ]
+}

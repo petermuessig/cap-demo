@@ -1,0 +1,20 @@
+{
+    "name": "approuter",
+    "description": "Approuter!",
+    "version": "0.0.0",
+    "private": true,
+    "scripts": {
+        "dev": "node -e 'new require(`dev-approuter`)' _",
+        "start": "node -e 'new require(`@sap/approuter`)().start()' _",
+        "build": "mkdir -p dist && jq 'del(.devDependencies)' package.json > dist/package.json && cp xs-app.json dist/xs-app.json"
+    },
+    "dependencies": {
+        "@sap/approuter": "^14.3.2"
+    },
+    "devDependencies": {
+        "@capire/bookshop": "file:../bookshop",
+        "bookshop-ui5": "file:../bookshop-ui5",
+        "bookshop-ui5-ts": "file:../bookshop-ui5-ts",
+        "dev-approuter": "^0.1.20"
+    }
+}

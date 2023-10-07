@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "target": "es2022",
+        "module": "es2022",
+        "skipLibCheck": true,
+        "preserveConstEnums": true,
+        "allowJs": true,
+        "strict": true,
+        "strictNullChecks": false,
+        "strictPropertyInitialization": false,
+        "rootDir": "webapp",
+        "baseUrl": "./",
+        "paths": {
+            "bookshop/ui5/ts/*": [
+                "webapp/*"
+            ]
+        }
+    },
+    "include": [
+        "webapp/**/*"
+    ]
+}

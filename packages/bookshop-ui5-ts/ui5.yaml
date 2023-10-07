@@ -1,0 +1,28 @@
+specVersion: "3.0"
+metadata:
+  name: bookshop.ui5.ts
+type: application
+framework:
+  name: OpenUI5
+  version: "1.118.0"
+  libraries:
+    - name: sap.m
+    - name: sap.ui.core
+    - name: sap.ui.layout
+    - name: themelib_sap_horizon
+builder:
+  customTasks:
+    - name: ui5-tooling-transpile-task
+      afterTask: replaceVersion
+# https://sap.github.io/ui5-tooling/pages/extensibility/CustomServerMiddleware/
+server:
+  customMiddleware:
+    - name: ui5-middleware-cap
+      afterMiddleware: compression
+    - name: ui5-middleware-serveframework
+      afterMiddleware: compression
+    - name: ui5-tooling-transpile-middleware
+      afterMiddleware: compression
+    # Last middleware (for the same afterMiddleware) comes first!
+    - name: ui5-middleware-livereload
+      afterMiddleware: compression
